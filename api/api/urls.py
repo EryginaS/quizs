@@ -36,7 +36,7 @@ urlpatterns = [
    path('quizs/<int:quiz_pk>/questions/<int:question_pk>/radio/create/', RadioCreateApiView.as_view(), name='radio_create'), 
 
    path('active_quiz', ActivQuizApiView.as_view(), name='active_quiz'),
-   path('quizs/<int:id>/questions/<int:question_pk>/answers', AnswerCreateView.as_view(), name='answer_create'),
+   path('quizs/<int:id>/questions/<int:question_pk>/answers/', AnswerCreateView.as_view(), name='answer_create'),
    path('my_quizs', UserQuizsListView.as_view() , name='answer')
 
 ]
