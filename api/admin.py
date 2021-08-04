@@ -1,8 +1,13 @@
 from django.contrib import admin
 from .models import Quiz, Question, Answer, Radio
-# Register your models here.
+from leaflet.admin import LeafletGeoAdmin
 
-admin.site.register(Quiz)
+
+class QuizAdmin(LeafletGeoAdmin):
+    list_display = ('name', 'locate')
+
+
+admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Question)
 admin.site.register(Answer)
 admin.site.register(Radio)

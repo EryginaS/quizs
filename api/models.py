@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.gis.db import models
+from django.db.models.manager import Manager
 from django.contrib.auth.models import User
 
 
@@ -49,6 +51,7 @@ class Quiz(models.Model):
     description = models.TextField(verbose_name='Описание опроса')
     start_date = models.DateField(null=False, verbose_name='Дата старта')
     end_date = models.DateField(null=False, blank=False, verbose_name='Дата окончания')
+    locate = models.PointField(srid=4326, blank=True, null=True)
 
     class Meta:
         verbose_name = "Опрос"
